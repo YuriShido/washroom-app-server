@@ -11,13 +11,17 @@ router.post('/add', (req, res, next) => {
     const name = req.body.name;
     const discription = req.body.discription;
     const coordinate = {lat: req.body.coordinate.lat, lng: req.body.coordinate.lng};
+    const openTime = req.body.openTime;
     const rate = req.body.rate;
+    const time=req.body.time
 
     const newWashroom = new Washroom({
         name,
         discription,
         coordinate,
-        rate
+        openTime,
+        rate,
+        time
     });
 
     newWashroom.save()
@@ -44,7 +48,9 @@ router.post('/:id', (req,res) => {
         washroom.name = req.body.name;
         washroom.discription = req.body.discription;
         washroom.coordinate = {lat: req.body.coordinate.lat, lng: req.body.coordinate.lng};
+        openTime = req.body.openTime;
         washroom.rate = req.body.rate;
+        washroom.time = req.body.time
         
         washroom.save()
         .then(()=> res.json('Washroom data is updated!'))

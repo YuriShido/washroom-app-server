@@ -22,14 +22,18 @@ const washroomSchema = new Schema({
         }
     },
 
-    // time: {
-    //     type: String
-    // },
+    openTime: {
+        type: String,
+        default: "No data"
+    },
 
     rate: {
         type: Number,
-    }
+    },
 
+    time: {
+        type:String,
+    }
 },
     {
         timestamps: true
@@ -39,24 +43,3 @@ const washroomSchema = new Schema({
 module.exports = mongoose.model('Washroom', washroomSchema)
 
 
-// username: {
-//     type: String,
-//     required: true
-// },
-// email: {
-//     type: String,
-//     required: true
-// },
-// cart: {
-//     items: [{
-//         productId: {
-//             type: Schema.Types.ObjectId,
-//             ref: 'Product',
-//             required: true
-//         },
-//         quantity: {
-//             type: Number,
-//             required: true
-//         }
-//     }]
-// }
